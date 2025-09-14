@@ -45,12 +45,12 @@ export const POST = async (req: NextRequest) => {
       );
     }
 
-    if(!client.providersAllowed.includes(providerCode)) {
-      return NextResponse.json(
-        { error: `Provider ${providerCode} is not allowed for this client.` },
-        { status: 403 }
-      );
-    }
+    // if(!client.providersAllowed.includes(providerCode)) {
+    //   return NextResponse.json(
+    //     { error: `Provider ${providerCode} is not allowed for this client.` },
+    //     { status: 403 }
+    //   );
+    // }
 
     const game = await prisma.game.findFirst({
       where: { gameUid: game_uid },
